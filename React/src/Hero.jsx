@@ -16,10 +16,10 @@ export default function Hero() {
                             I'm Bhavani Shankar
                         </Typography>
                         <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: '1.1rem', fontFamily: 'monospace', display: 'flex', alignItems: 'center', gap: 0 }}>
-                            <img src={snowLogo} alt="ServiceNow Logo" style={{ height: '2.5rem', width: 'auto', marginTop: '-5px' }} /> Developer and Implementation specialist.
+                            <img src={snowLogo} alt="ServiceNow Logo" style={{ height: '2.5rem', width: 'auto', marginTop: '-5px' }} /> Developer and Implementation specialist 🧑‍💻
                         </Typography>
                         <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: '1.1rem', fontFamily: 'monospace' }}>
-                            Amateur technical blogger and content creator.
+                            Amateur technical blogger and content creator ✍️
                         </Typography>
                         <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: '1.1rem', fontFamily: 'monospace' }}>
                             Find more about me below 👇
