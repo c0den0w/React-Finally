@@ -32,11 +32,11 @@ export default function Hero() {
                             src={profileImage}
                             alt="Profile"
                             sx={{
-                                width: '100%',
-                                maxWidth: '300px',
+                                width: '150%',
+                                // maxWidth: '300px',
                                 height: 'auto',
-                                borderRadius: '8px',
-                                boxShadow: 3,
+                                // borderRadius: '8px',
+                                // boxShadow: 3,
                             }}
                         />
                     </Grid>
