@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import NavBar from "./NavBar.jsx";
+import About from './About.jsx';
 import Hero from "./Hero.jsx";
 import Blogs from './Blogs.jsx';
 import MyWork from './MyWork.jsx';
@@ -9,19 +10,20 @@ import './App.css'
 
 
 function App() {
-  //Creates a React ref that can hold a reference to a DOM element
-  //Initialized to null since no element is attached yet
+  const aboutRef = useRef(null);
   const blogsRef = useRef(null);
   const myWorkRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const scrollToBlogs = () => {
-    //accesses the actual DOM element the ref is attached to and scrolls it into view with a smooth animation
-    blogsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // Reusable scroll handler to eliminate code duplication
+  const createScrollHandler = (ref) => () => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
-  const scrollToWork = () => {
-    //accesses the actual DOM element the ref is attached to and scrolls it into view with a smooth animation
-    myWorkRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+  const scrollHandlers = {
+    about: createScrollHandler(aboutRef),
+    blogs: createScrollHandler(blogsRef),
+    work: createScrollHandler(myWorkRef),
   };
 
   useEffect(() => {
@@ -38,13 +40,16 @@ function App() {
 
   return (
     <>
-      <NavBar onBlogsClick={scrollToBlogs} onMyWorkClick={scrollToWork} />
+      <NavBar {...scrollHandlers} />
       <Hero />
+      <div ref={aboutRef}>
+        <About />
+      </div>
       <div ref={blogsRef}>
         <Blogs />
       </div>
       <div ref={myWorkRef}>
-      <MyWork />
+        <MyWork />
       </div>
 
       {/* Scroll Guide Ruler */}
