@@ -1,5 +1,5 @@
 import "./NavBar.css";
-export default function NavBar() {
+export default function NavBar({ onBlogsClick }) {
     return (
         <div className="navbar-container">
             <nav className="navbar">
@@ -7,6 +7,7 @@ export default function NavBar() {
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); onBlogsClick?.(); }}>Blogs</a></li>
                 </ul>
             </nav>
         </div>
