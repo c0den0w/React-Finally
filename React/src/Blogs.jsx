@@ -53,7 +53,7 @@ export default function Blogs() {
                 </Typography>
 
                 <Box className="blogs-grid">
-                    {blogs.map((blog) => (
+                    {blogs.slice(0, 3).map((blog) => (
                         <Card key={blog.id} className="blog-card" sx={{ '&:hover': { boxShadow: 6, transform: 'translateY(-4px)', transition: 'all 0.3s ease-in-out' } }}>
                             <CardMedia
                                 component="img"
@@ -77,6 +77,12 @@ export default function Blogs() {
                             </CardActions>
                         </Card>
                     ))}
+                </Box>
+
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
+                    <Button variant="text" color="primary" sx={{ fontFamily: 'monospace', fontWeight: 'bold', fontSize: '1rem', textTransform: 'none' }}>
+                        View All
+                    </Button>
                 </Box>
             </Container>
         </Box>
