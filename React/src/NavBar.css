@@ -3,9 +3,9 @@
     padding: 1rem;
     display: flex;
     /* min-height:  */
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    /* position: fixed; */
+    /* left: 50%;
+    transform: translateX(-50%); */
     box-sizing: content-box;
     max-height: 80px;
     justify-content: center;
