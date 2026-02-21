@@ -54,7 +54,7 @@ export default function Blogs() {
 
                 <Box className="blogs-grid">
                     {blogs.slice(0, 3).map((blog) => (
-                        <Card key={blog.id} className="blog-card" sx={{ '&:hover': { boxShadow: 6, transform: 'translateY(-4px)', transition: 'all 0.3s ease-in-out' } }}>
+                        <Card key={blog.id} className="blog-card" sx={{ '&:hover': {  transition: 'all 0.3s ease-in-out' }, border: "1px solid black", borderRadius: '1rem' }}>
                             <CardMedia
                                 component="img"
                                 image={blog.image}
@@ -70,7 +70,7 @@ export default function Blogs() {
                                 </Typography>
                             </CardContent>
                             <CardActions sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', gap: '4px' }}>
-                                <Chip label="2 min read" size="small" variant="outlined" sx={{ fontSize: '0.7rem' }} />
+                                <Chip label="2 min read" size='small' variant="outlined" slotProps={{ label: { sx: { fontSize: '0.6rem !important' } } }} />
                                 <Button size="small" color="primary" onClick={() => handleReadMore(blog.id)} sx={{ fontFamily: 'monospace', fontWeight: 'bold', fontSize: '0.75rem', padding: '2px 6px' }}>
                                     Read More
                                 </Button>
