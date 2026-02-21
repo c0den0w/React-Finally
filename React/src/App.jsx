@@ -12,11 +12,16 @@ function App() {
   //Creates a React ref that can hold a reference to a DOM element
   //Initialized to null since no element is attached yet
   const blogsRef = useRef(null);
+  const myWorkRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const scrollToBlogs = () => {
     //accesses the actual DOM element the ref is attached to and scrolls it into view with a smooth animation
     blogsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollToWork = () => {
+    //accesses the actual DOM element the ref is attached to and scrolls it into view with a smooth animation
+    myWorkRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -33,12 +38,14 @@ function App() {
 
   return (
     <>
-      <NavBar onBlogsClick={scrollToBlogs} />
+      <NavBar onBlogsClick={scrollToBlogs} onMyWorkClick={scrollToWork} />
       <Hero />
       <div ref={blogsRef}>
         <Blogs />
       </div>
+      <div ref={myWorkRef}>
       <MyWork />
+      </div>
 
       {/* Scroll Guide Ruler */}
       <div className="scroll-guide-container">
