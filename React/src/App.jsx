@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import NavBar from "./NavBar.jsx";
 import Hero from "./Hero.jsx";
 import Blogs from './Blogs.jsx';
+import MyWork from './MyWork.jsx';
 import './App.css'
 
 
@@ -37,6 +38,7 @@ function App() {
       <div ref={blogsRef}>
         <Blogs />
       </div>
+      <MyWork />
 
       {/* Scroll Guide Ruler */}
       <div className="scroll-guide-container">
